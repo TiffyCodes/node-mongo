@@ -8,7 +8,7 @@ const dboper = require('./operations');
 const url = 'mongodb://localhost:27017/';
 //this is the port # in which the mongodb server is running
 //give the name of the db we want to connect to
-const dbname = 'nucampsite';
+const dbname = 'campsite';
 
 //to access the server using these configs- must connect
 MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
@@ -56,7 +56,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
                 dboper.findDocuments(db, 'campsites', docs => {
                     console.log('Found Documents:', docs);
 
-                    dboper.removeDocument(db, { name: "Breadcrumb trail Campground"},
+                    dboper.removeDocument(db, { name: "Breadcrumb Trail Campground"},
                     'campsites', result => {
                         console.log('Deleted Document Count:', result.deletedCount);
                         client.close();
